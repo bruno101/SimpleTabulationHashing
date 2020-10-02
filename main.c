@@ -31,7 +31,6 @@ struct hashtable {
 };
 
 //hashtable_dinamica implementa table doubling/halving
-//ela também contém um ponteiro para as tabelas aleatórias
 struct hashtable_dinamica {
   uint64_t tamanho;
   uint64_t numeroElementos;
@@ -45,7 +44,6 @@ struct hashtable_dinamica {
 //Funções da tabela de dispersão normal
 
 HashTable *criaHashTable (uint64_t tamanho) {
-  //'tamanho' é sempre uma potência de 2, o que enforçamos nas funções de HashTableDinamica 
 
   HashTable *H = malloc(sizeof(HashTable));
 
@@ -303,8 +301,6 @@ uint64_t geraNumeroAleatorio () {
 
   return randomInt;
 }
-
-//Preenche os valores da tabela aleatoria a partir do numero 'valoresPossiveis', que eh o número de valores em que cada chave pode ser mapeada (o tamanho da nossa tabela de dispersao)
 
 void preencheTabelaAleatoria (uint64_t tabelaAleatoria[0x100]) {
 
