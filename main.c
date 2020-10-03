@@ -336,7 +336,7 @@ int buscaHashTableDinamica (HashTableDinamica *T, uint64_t chave) {
 }
 
 //retorna '1' em caso de sucesso e '0' caso contrário
-int long insereHashTableDinamica (HashTableDinamica *T, uint64_t chave) {
+int insereHashTableDinamica (HashTableDinamica *T, uint64_t chave) {
 
   int res = insereHashTable(T->hashtable, chave, 1);
   T->numeroElementos +=1;
