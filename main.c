@@ -65,7 +65,9 @@ uint64_t funcHashTable (uint64_t chave) {
 
   for (uint64_t i = 0; i < 8; i++) {
     //a cada iteração fazemos um 'XOR' entre o valor anterior e o valor a que a tabela mapeia um determinado grupo de dígitos de 'chave'
+    
     valor ^= (tabelasAleatorias[i][chave%(0x100)]);
+
     chave >>= 8;
   }
   
@@ -424,8 +426,9 @@ int main(int argc, char **argv) {
     if (line[strlen(line)-1] != '\n') {
       fprintf(file_out, "%s", "\n");
     } 
-
-    chave = atoi(line+4);
+      
+    char c;
+    sscanf(line+4, "%"PRIu64"%c", &chave, &c);
 
     switch (line[0]) {
       case 'B': 
